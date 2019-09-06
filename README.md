@@ -1,10 +1,8 @@
 # Vue Component Browser for Gridsome
 
-A simple vue component browser starter for Gridsome
+A simple vue component browser starter for Gridsome using [gridsome-transformer-vue](https://github.com/u12206050/gridsome-transformer-vue)
 
-## Demo URL
-
-[https://gridsome-portfolio-starter.netlify.com](https://gridsome-portfolio-starter.netlify.com)
+## [View Demo](https://gridsome-vue-starter.day4.now.sh/)
 
 ## Features
 
