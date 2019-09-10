@@ -1,9 +1,12 @@
 <template>
-  <div class="layouttext-white h-full">
-    <header class="flex bg-gray-100 border-b border-gray-200 inset-x-0 z-100 h-16 items-center">
+  <div class="layouttext-white h-full pt-16">
+    <header class="flex bg-gray-100 border-b border-gray-200 inset-x-0 z-50 h-16 items-center fixed top-0">
       <div class="w-full max-w-screen-xl relative mx-auto px-6">
         <div class="flex justify-between">
-          <g-link to="/" class="text-gray-800 text-xl">{{ $static.metaData.siteName }}</g-link>
+          <button class="hidden msm:block pr-4" @click="menuActive = !menuActive">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+          <g-link to="/" class="text-gray-800 text-xl truncate">{{ $static.metaData.siteName }}</g-link>
           <div class="flex justify-start items-center text-gray-500">
             <a class="block flex items-center hover:text-gray-700 mr-5" href="https://github.com/u12206050/gridsome-vue-starter">
               <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>GitHub</title><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path></svg>
@@ -16,16 +19,22 @@
       </div>
     </header>
     <div class="flex h-full">
-      <aside class="w-1/5 bg-gray-100">
-        <div v-for="(comps, dir) in tree" :key="dir" class="p-3">
+      <span @click="menuActive = false" class="hidden msm:block msm:fixed inset-0 z-20 bg-black opacity-25" v-if="menuActive"></span>
+      <aside
+        class="bg-gray-100 msm:fixed msm:pt-10 msm:w-50 msm:mt-16 inset-y-0 z-40"
+        :class="{'msm:-m-64': !menuActive}"
+        style="min-width: 12rem; transition: .4s">
+        <button class="absolute inset-y-0 right-0 -mr-12 bg-gray-200 py-1 px-2 semibold" @click="menuActive = false">
+          <svg class="w-8 h-8 text-gray-600 stroke-current" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L1 9L9 17" stroke-linecap="round"/></svg>
+        </button>
+        <div v-for="(comps, dir) in tree" :key="dir" class="p-3 msm:text-center">
           <h5 class="mb-3 lg:mb-2 text-gray-500 uppercase tracking-wide font-bold text-sm lg:text-xs">{{dir}}</h5>
           <template v-for="comp in comps">
             <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name}}</g-link>
           </template>
         </div>
-
       </aside>
-      <main class="w-4/5">
+      <main class="flex-auto">
         <slot/>
       </main>
     </div>
@@ -54,6 +63,11 @@ query {
 
 <script>
 export default {
+  data() {
+    return {
+      menuActive: true
+    }
+  },
   computed: {
     tree() {
       const tree = {}

@@ -13,3 +13,48 @@ html, body {
 button:focus, a:focus, input:focus {
   outline: none !important;
 }
+.block-with-text {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5em;
+  max-height: 6em;
+}
+.lines-2 {
+  max-height: 3em;
+}
+.lines-3 {
+  max-height: 4.5em;
+}
+.lines-6 {
+  max-height: 9em;
+}
+.block-with-text:before {
+  content: '...';
+  background: linear-gradient(90deg, transparent, white, white, white);
+  padding: 0 .5em 0 1.5em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.block-with-text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 2em;
+  height: 2em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s ease-out;
+  opacity: 1;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+pre {
+  @apply font-mono inline-block text-sm select-all px-1 bg-blue-100 rounded;
+}

@@ -11,7 +11,7 @@ module.exports = {
     options: {
       baseDir: './src/library',
       path: '**/*.vue',
-      typeName: 'VueComponent'
+      typeName: 'VueComponent',
     }
   }, {
     use: 'gridsome-plugin-tailwindcss',

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div :key="comp.id" class="container px-8 py-6 m-4 w-full">
+    <div :key="comp.id" class="p-6 w-full">
       <h3 class="text-xl mb-3">{{comp.name}}</h3>
       <div class="my-6 w-full">
         <div class="flex items-end justify-center mb-2 bg-white">
@@ -16,18 +16,23 @@
             <svg width="32" height="24" viewBox="0 0 38 28" xmlns="http://www.w3.org/2000/svg" class="fill-current block mx-auto mb-1"><path d="M34 26h4v1c-1.333.667-2.667 1-4 1H4c-1.333 0-2.667-.333-4-1v-1h4V7.5A1.5 1.5 0 0 1 5.5 6h27A1.5 1.5 0 0 1 34 7.5V26zM6 8v18h26V8H6z" fill-rule="evenodd"></path></svg>
             <p class="text-xs">lg</p>
           </span>
-          <span @click="previewSize = 'w-full'" class="inline-block text-center cursor-pointer select-none text-gray-500" :class="{'text-gray-800': previewSize == 'w-full'}">
+          <span @click="previewSize = 'w-full'" class="inline-block text-center cursor-pointer select-none mr-8 text-gray-500" :class="{'text-gray-800': previewSize == 'w-full'}">
             <svg width="30" height="24" viewBox="0 0 36 28" xmlns="http://www.w3.org/2000/svg" class="fill-current block mx-auto mb-1"><path d="M20.857 24l.857 3H24v1H12v-1h2.286l.857-3H1.5A1.5 1.5 0 0 1 0 22.5v-21A1.5 1.5 0 0 1 1.5 0h33A1.5 1.5 0 0 1 36 1.5v21a1.5 1.5 0 0 1-1.5 1.5H20.857zM2 2v18h32V2H2z"></path></svg>
             <p class="text-xs">xl</p>
           </span>
+          <span @click="previewSize = 'code'" class="inline-block text-center cursor-pointer select-none text-gray-500" :class="{'text-gray-800': previewSize == 'code'}">
+            <p class="texl-2xl">&lt;/&gt;</p>
+            <p class="text-xs">code</p>
+          </span>
         </div>
-        <div class="container mt-8 w-full flex justify-center">
-          <i-frame :class="[previewSize]">
+        <div class="mt-8 w-full flex justify-center">
+          <div v-if="previewSize != 'code'" class="block" :class="[previewSize]">
             <component :is="comp._file" v-bind="mockData"></component>
-          </i-frame>
+          </div>
+          <Code v-else :code="comp.source" class="max-w-full" />
         </div>
       </div>
-      <div class="container w-full max-w-xl">
+      <div class="w-full max-w-xl">
         <PreviewCode :tag="comp.name" :props="mockData" :slots="comp.slots" />
 
         <ul class="flex border-b mt-10">
@@ -52,7 +57,7 @@
                 <td class="py-2 px-3 border-b border-grey-light">{{prop.type.join(' | ')}}</td>
                 <td class="py-2 px-3 border-b border-grey-light"><span class="mx-3 text-xs text-white rounded-lg p-1 w-10 block text-center" :class="[prop.required ? 'bg-blue-500' : 'bg-gray-600']">{{prop.required ? 'yes' : 'no'}}</span></td>
                 <td class="border-b border-grey-light">
-                  <PreviewInput v-model="mockData[prop.name]" :type="prop.type" :required="prop.required" />
+                  <PreviewInput v-model="mockData[prop.name]" :type="prop.type" :typeDesc="prop.typeDesc" :required="prop.required" />
                 </td>
               </tr>
             </tbody>
@@ -67,11 +72,20 @@
             </ul>
           </div>
 
-          <div v-if="activeTab === 'methods'" class="p-6">
-            <ul v-if="comp.methods">
-              <li v-for="method in comp.methods" :key="method.name">{{method.name}}</li>
-            </ul>
-          </div>
+          <table v-if="activeTab === 'methods'" class="text-gray-700 text-sm w-full">
+            <thead>
+              <tr class="font-bold">
+                <th class="p-3 bg-grey-lightest text-sm text-grey-dark border-b border-grey-light">Name</th>
+                <th class="p-3 bg-grey-lightest text-sm text-grey-dark border-b border-grey-light">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="method in comp.methods" :key="method.name" class="hover:bg-grey-lighter">
+                <td class="font-bold capitalize py-2 px-3 border-b border-grey-light">{{method.name}}</td>
+                <td class="py-2 px-3 border-b border-grey-light">{{method.describe}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -83,17 +97,20 @@ query VueComponent ($id: String!) {
   comp: vueComponent (id: $id) {
     id
     name
+    source
     fileInfo {
       path
     }
     props {
       name
       type
+      typeDesc
       required
       default
     }
-    slots {
+    methods {
       name
+      describe
     }
     mockData
   }
@@ -121,8 +138,14 @@ export default {
   },
   components: {
     Tab: () => import('~/partials/Tab.vue'),
-    PreviewCode: () => import('~/partials/PreviewCode.vue'),
-    PreviewInput: () => import('~/partials/PreviewInput.vue')
+    PreviewCode: () => import('~/components/PreviewCode.vue'),
+    PreviewInput: () => import('~/components/PreviewInput.vue'),
+    Code: () => import("~/components/Code.vue")
+  },
+  watch: {
+    comp() {
+      this.activeTab = 'props'
+    }
   }
 }
 </script>

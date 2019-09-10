@@ -17,7 +17,8 @@ export default function (Vue, { router, head, isClient }) {
     },
     beforeUpdate() {
       //freezing to prevent unnessessary Reactifiation of vNodes
-      this.iApp.children = Object.freeze(this.$slots.default)
+      if (this.iApp)
+        this.iApp.children = Object.freeze(this.$slots.default)
     },
     methods: {
       renderChildren() {

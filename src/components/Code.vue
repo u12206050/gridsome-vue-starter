@@ -1,57 +1,15 @@
 <template>
-  <prism language="html" :code="html" class="bg-gray-900 w-full text-xs shadow-md p-4 px-6 rounded"></prism>
+  <prism :language="language" :code="code" class="bg-gray-900 w-full text-xs shadow-md p-4 px-6 rounded"></prism>
 </template>
 
 <script>
-import Prism from 'vue-prismjs'
-
+import Prism from "vue-prismjs"
 export default {
-  props: {
-    tag: {
-      type: String,
-      required: true
-    },
-    props: {
-      type: Object
-    },
-    slots: {
-      type: Array
-    }
-  },
-  computed: {
-    propsHtml() {
-      let html = ''
-      const { props } = this
-      const pKeys = Object.keys(props)
-      if (pKeys && pKeys.length) {
-        html += ' '
-        html += pKeys.map(k => {
-          let s = k === 'value' ? `v-model="abc"` : `${k}="${props[k]}"`
-          if (s.length > 50) s = s.substr(0,48) + '..."'
-          return s
-        }).join('\n  ')
-      }
-      return html
-    },
-    slotsHtml() {
-      let html = ''
-      const { slots } = this
-      if (slots && slots.length) {
-        html += '\n  '
-        html += slots.map(({ name }) => `<template v-slot:${name}>\n    <div>Some ${name} content here…</div>\n  </template>`).join('\n  ')
-      }
-      return html
-    },
-    html() {
-      const { tag, propsHtml, slotsHtml } = this
-      return `<${tag}${propsHtml}>${slotsHtml}</${tag}>`
-    }
-  },
-  components: {
-    Prism
-  }
+  props: [ 'language', 'code' ],
+  components: { Prism }
 }
 </script>
+
 
 <style>
 /**
@@ -64,7 +22,7 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: #c5c8c6;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -85,7 +43,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.3em;
 }
@@ -97,15 +55,15 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
+  padding: 0.1em;
+  border-radius: 0.3em;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #7C7C7C;
+  color: #7c7c7c;
 }
 
 .token.punctuation {
@@ -113,23 +71,23 @@ pre[class*="language-"] {
 }
 
 .namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .token.property,
 .token.keyword,
 .token.tag {
-    color: #96CBFE;
+  color: #96cbfe;
 }
 
 .token.class-name {
-  color: #FFFFB6;
+  color: #ffffb6;
   text-decoration: underline;
 }
 
 .token.boolean,
 .token.constant {
-    color: #99CC99;
+  color: #99cc99;
 }
 
 .token.symbol,
@@ -138,7 +96,7 @@ pre[class*="language-"] {
 }
 
 .token.number {
-  color: #FF73FD;
+  color: #ff73fd;
 }
 
 .token.selector,
@@ -147,42 +105,42 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #A8FF60;
+  color: #a8ff60;
 }
 
 .token.variable {
-  color: #C6C5FE;
+  color: #c6c5fe;
 }
 
 .token.operator {
-    color: #EDEDED;
+  color: #ededed;
 }
 
 .token.entity {
-    color: #FFFFB6;
-    /* text-decoration: underline; */
+  color: #ffffb6;
+  /* text-decoration: underline; */
 }
 
 .token.url {
-    color: #96CBFE;
+  color: #96cbfe;
 }
 
 .language-css .token.string,
 .style .token.string {
-  color: #87C38A;
+  color: #87c38a;
 }
 
 .token.atrule,
 .token.attr-value {
-    color: #F9EE98;
+  color: #f9ee98;
 }
 
 .token.function {
-  color: #DAD085;
+  color: #dad085;
 }
 
 .token.regex {
-    color: #E9C062;
+  color: #e9c062;
 }
 
 .token.important {
