@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'Widget Card',
+  name: 'WidgetCard',
   props: {
     topic: {
       type: String,

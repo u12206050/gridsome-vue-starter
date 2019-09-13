@@ -1,6 +1,7 @@
 <template>
-  <button class="py-2 px-4 font-semibold"
-    :class="[theme, {border, shadow, 'rounded-lg': rounded}]"
+  <button class="py-2 px-4 font-semibold hover:shadow-none"
+    style="transition: .3s"
+    :class="[theme, {border, 'shadow-lg': shadow, 'rounded-lg': rounded}]"
     @click="click">{{label}}</button>
 </template>
 

@@ -14,7 +14,14 @@ module.exports = {
       'mlg': {'max': '1023px'},// => @media (max-width: 1023px) { ... }
       'mxl': {'max': '1279px'}// => @media (max-width: 1279px) { ... }
     },
-    extend: {}
+    extend: {
+      width: {
+        'mobile': '380px',
+        'tablet': '768px',
+        'laptop': '1024px',
+        'desktop': '1280px'
+      }
+    }
   },
   variants: {},
   corePlugins: {

@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Topic Card',
+  name: 'TopicCard',
   props: {
     topic: {
       type: String,
