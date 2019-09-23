@@ -42,13 +42,10 @@ export default {
 </script>
 
 <style>
-.card {
-  transition: .3s;
-}
 .card.stacked {
+  transition: .3s;
   position: relative;
   box-shadow: 0 0 0 1px #D4D4D4 !important;
-
 }
 .card.stacked:before,.card.stacked:after {
   content: '';

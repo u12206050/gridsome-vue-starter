@@ -1,5 +1,5 @@
 <template>
-  <prism :language="language" :code="code" class="bg-gray-900 w-full text-xs shadow-md p-4 px-6 rounded"></prism>
+  <prism :language="language" :code="code" class=" overflow-x-auto bg-gray-900 w-full text-xs shadow-md p-4 px-6 rounded"></prism>
 </template>
 
 <script>

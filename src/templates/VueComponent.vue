@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div :key="comp.id" class="p-6 w-full">
+    <div :key="comp.id" class="p-6">
       <h3 class="text-xl mb-3">{{comp.name | namify}}</h3>
       <Screen :component="comp._file" :props="mockData" :source="comp.source"></Screen>
       <div class="w-full max-w-xl">

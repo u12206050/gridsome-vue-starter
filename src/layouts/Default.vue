@@ -1,5 +1,5 @@
 <template>
-  <div class="layouttext-white w-full overflow-x-hidden h-full pt-16">
+  <div class="layouttext-white max-w-full h-full w-full pt-16">
     <header class="flex bg-gray-100 border-b border-gray-200 inset-x-0 z-50 h-16 items-center fixed top-0">
       <div class="w-full max-w-screen-xl relative mx-auto px-6">
         <div class="flex justify-between">
@@ -18,29 +18,29 @@
         </div>
       </div>
     </header>
-    <div class="flex h-full">
+    <div class="flex">
       <span @click="menuActive = false" class="hidden msm:block msm:fixed inset-0 z-20 bg-black opacity-25" v-if="menuActive"></span>
       <aside
         class="bg-gray-100 msm:fixed msm:pt-10 msm:w-50 msm:mt-16 inset-y-0 z-40"
         :class="{'msm:-m-64': !menuActive}"
         style="min-width: 12rem; transition: .4s">
-        <button class="absolute inset-y-0 right-0 -mr-12 bg-gray-200 py-1 px-2 semibold" @click="menuActive = false">
+        <button v-if="menuActive" class="absolute inset-y-0 right-0 -mr-12 bg-gray-200 py-1 px-2 semibold" @click="menuActive = false">
           <svg class="w-8 h-8 text-gray-600 stroke-current" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L1 9L9 17" stroke-linecap="round"/></svg>
         </button>
         <div v-for="(branch, dir) in tree" :key="dir" class="p-3 msm:text-center">
           <h5 class="mb-3 lg:mb-2 text-gray-600 uppercase tracking-wide font-bold text-sm lg:text-xs">{{dir}}</h5>
           <template v-for="comp in branch.comps">
-            <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+            <g-link :key="comp.id" :to="comp.path+'/'" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
           </template>
           <div class="p-1" v-for="(leaf, ldir) in branch.leafs" :key="ldir" >
             <h5 class="my-2 text-gray-500 uppercase tracking-wide font-bold text-xs lg:text-xs">{{ldir}}</h5>
             <template v-for="comp in leaf.comps">
-              <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+              <g-link :key="comp.id" :to="comp.path+'/'" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
             </template>
           </div>
         </div>
       </aside>
-      <main class="flex-auto">
+      <main class="flex-auto overflow-x-hidden">
         <slot/>
       </main>
     </div>

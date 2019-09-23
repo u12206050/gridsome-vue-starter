@@ -23,7 +23,9 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    fill: ['hover', 'focus']
+  },
   corePlugins: {
     outline: false
   },

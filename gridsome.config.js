@@ -5,23 +5,26 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Static Vue Component Explorer',
-  plugins: [{
-    use: '@gridsome/source-filesystem',
-    options: {
-      baseDir: './src/library',
-      path: '**/*.vue',
-      typeName: 'VueComponent',
+  siteName: 'Static Component Explorer',
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        baseDir: './src/library',
+        path: '**/*.vue',
+        typeName: 'VueComponent',
+      }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: 'tailwind.config.js',
+        purgeConfig: {},
+        presetEnvConfig: {},
+        shouldPurge: true,
+        shouldImport: true,
+        shouldTimeTravel: true,
+      }
     }
-  }, {
-    use: 'gridsome-plugin-tailwindcss',
-    options: {
-      tailwindConfig: 'tailwind.config.js',
-      purgeConfig: {},
-      presetEnvConfig: {},
-      shouldPurge: true,
-      shouldImport: true,
-      shouldTimeTravel: true,
-    }
-  }]
+  ]
 }
