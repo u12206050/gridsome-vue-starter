@@ -22,7 +22,7 @@
         <h3 class="font-semibold text-md text-gray-900">Props</h3>
         <h4>Adding predefined options to list for a prop:</h4>
         <div class="shadow m-6 py-4 px-16">
-          <p>Add a comment right above the type of the prop containing a csv list of options prefixed with the phrase <pre>options:</pre></p>
+          <p>Add a comment right above the type of the prop containing a csv list of options prefixed with the phrase <b>options:</b></p>
           <Code :code="`// Button.vue within <script>
 {
   props: {
