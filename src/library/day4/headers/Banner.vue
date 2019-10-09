@@ -40,7 +40,7 @@ export default {
     topic: String,
     // faker.hacker.phrase
     subtitle: String,
-    // faker.image.imageUrl
+    // Image
     image: [Object, String],
     // faker.internet.color
     colorA: String,

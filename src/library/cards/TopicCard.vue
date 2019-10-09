@@ -41,7 +41,7 @@ export default {
       type: String,
       required: true
     },
-    // faker.image.imageUrl
+    // Image
     image: [Object, String],
     following: Boolean,
     stacked: Boolean
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 .card {
   transition: .3s;
 }

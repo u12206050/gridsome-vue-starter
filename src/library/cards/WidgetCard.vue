@@ -35,7 +35,7 @@ export default {
       type: String,
       required: true
     },
-    // faker.image.imageUrl
+    // Image
     image: {
       type: [Object, String],
       required: true

@@ -30,12 +30,12 @@
         <div v-for="(branch, dir) in tree" :key="dir" class="p-3 msm:text-center">
           <h5 class="mb-3 lg:mb-2 text-gray-600 uppercase tracking-wide font-bold text-sm lg:text-xs">{{dir}}</h5>
           <template v-for="comp in branch.comps">
-            <g-link :key="comp.id" :to="comp.path+'/'" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+            <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
           </template>
           <div class="p-1" v-for="(leaf, ldir) in branch.leafs" :key="ldir" >
             <h5 class="my-2 text-gray-500 uppercase tracking-wide font-bold text-xs lg:text-xs">{{ldir}}</h5>
             <template v-for="comp in leaf.comps">
-              <g-link :key="comp.id" :to="comp.path+'/'" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+              <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
             </template>
           </div>
         </div>
@@ -49,7 +49,7 @@
 
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
   comps: allVueComponent(sortBy: "path") {

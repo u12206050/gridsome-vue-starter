@@ -64,7 +64,7 @@
 </template>
 
 <page-query>
-query VueComponent ($id: String!) {
+query VueComponent ($id: ID!) {
   comp: vueComponent (id: $id) {
     id
     name

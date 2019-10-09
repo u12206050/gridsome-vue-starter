@@ -34,7 +34,7 @@ export default {
       type: String,
       required: true
     },
-    // faker.image.imageUrl
+    // Image
     image: [Object, String],
     stacked: Boolean
   }

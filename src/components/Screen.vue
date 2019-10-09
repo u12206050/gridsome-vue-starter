@@ -1,7 +1,7 @@
 <template>
-  <div class="my-6 w-full overflow-x-hidden">
+  <div class="my-6 w-full msm:w-screen overflow-x-hidden msm:-mx-6">
     <div class="flex items-end justify-center mb-2 bg-white w-full">
-      <button title="380px" @click="previewSize = 'w-mobile'" class="inline-block text-center cursor-pointer select-none mr-8 text-gray-500" :class="{'text-gray-800': previewSize == 'w-mobile'}">
+      <button title="380px" @click="previewSize = 'w-mobile max-w-full overflow-x-hidden'" class="inline-block text-center cursor-pointer select-none mr-8 text-gray-500" :class="{'text-gray-800': previewSize == 'w-mobile max-w-full overflow-x-hidden'}">
         <svg width="12" height="24" viewBox="0 0 14 28" xmlns="http://www.w3.org/2000/svg" class="fill-current block mx-auto mb-1"><path d="M1.5 6h11A1.5 1.5 0 0 1 14 7.5v19a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 26.5v-19A1.5 1.5 0 0 1 1.5 6zM1 9v16h12V9H1zm6 18.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" fill-rule="evenodd"></path></svg>
         <p class="text-xs">sm</p>
       </button>
@@ -70,8 +70,8 @@ export default {
     background: #fff;
     position: absolute;
     z-index: 100;
-    width: calc(100vw - 100%);
-    left: calc(100% - 100vw);
+    width: 380px;
+    left: -380px;
     border-right: 1px solid #ddd;
   }
 }
