@@ -1,10 +1,10 @@
 <template>
-  <div class="story p-4 max-w-lg">
+  <div class="story bg-d4slate-lighter p-4 max-w-lg">
     <div class="flex justify-between pb-4">
-      <h1 class="title text-lg font-bold">New for you</h1>
+      <h1 class="text-d4slate-dark text-lg font-bold">New for you</h1>
       <div>
         <Link title="Customise" /> 
-          <span class="divider mx-1">|</span> 
+          <span class="text-d4slate-light mx-1">|</span> 
         <Link title="See All" />
       </div>
     </div>
@@ -91,11 +91,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      loop: false,
-      tab: 0,
-      cards: [{
+  name: 'Story',
+  props: {
+    cards: {
+      type: Array,
+      required: true,
+      default: () => {[{
         title: "Director",
         subtitle: "THX",
         excerpt: "Et neque suscipit eveniet nostrum et assumenda ipsa qui repellendus. Non tempore fugiat enim qui ut. Molestiae ut est blanditiis omnis sed voluptatibus omnis minus voluptatem. Autem maxime porro omnis et.",
@@ -131,15 +132,13 @@ export default {
         topic: "DAy4 pink Soft",
         readtime: 43,
         author: "GZA"
-      }],
-      card: {
-        title: "Pizza transitional",
-        path: "/development/story",
-        image: "https://source.unsplash.com/random?283/160",
-        topic: "Cool pink",
-        readtime: 4,
-        author: "GZA"
-      }
+      }]}
+    }
+  },
+  data() {
+    return {
+      loop: false,
+      tab: 0,
     }
   },
   methods: {
@@ -180,14 +179,6 @@ export default {
 
 <style lang="scss">
 .story {
-  background: #EDF1FA;
-
-  .divider {
-    color: #9CA6BE;
-  }
-  .title {
-    color: #384156;
-  }
   .marker-links {
     .marker {
       left: 0;

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="text-lg pb-5 font-bold">Topics For You</h1>
-    <div class="snap overflow-x-scroll flex content-between">
+    <h1 class="text-lg pb-3 font-bold">Topics For You</h1>
+    <div class="snap overflow-x-scroll py-2 flex content-between">
       <template v-for="(topic, i) in topics">
         <CardSimple class="mr-4 snap-item" :key="i" :to="topic.to" :title="topic.title"></CardSimple>
       </template>
@@ -29,7 +29,7 @@ export default {
         },{
           title: "optical",
           to: "#"
-        },
+        }
       ]
     }
   },

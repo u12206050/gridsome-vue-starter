@@ -1,6 +1,6 @@
 <template>
-  <g-link :to="to">
-    <div class="card-simple flex-shrink-0 rounded-lg p-2 flex items-end">
+  <g-link :to="to" class="p-1 w-36 h-20 flex-shrink-0">
+    <div class="bg-d4primary w-full h-full rounded-lg p-2 flex items-end">
       <h1 class="text-white leading-tight text-lg font-bold content-end">{{ title }}</h1>
     </div>
   </g-link>
@@ -21,12 +21,4 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.card-simple {
-  background: #FFAE0C;
-  width: 8.5rem;
-  height: 4.5rem;
-}
-</style>
 

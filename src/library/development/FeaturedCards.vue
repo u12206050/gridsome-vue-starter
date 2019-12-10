@@ -6,7 +6,7 @@
         <span class="mx-2">Featured</span>
       </h5>
     </div>
-    <div class="snap my-2 overflow-x-scroll whitespace-no-wrap flex content-between">
+    <div class="snap py-4 overflow-x-scroll whitespace-no-wrap flex content-between">
       <template v-for="card in cards" >
         <TopicCard class="mr-4 w-5/6 snap-item"
           :key="card.path"
@@ -23,11 +23,13 @@
 </template>
 
 <script>
-
 export default {
-  data() {
-    return {
-      cards: [{
+  name: 'FeaturedCard',
+  props: {
+    cards: {
+      type: Array,
+      required: true,
+      default: () => [{
         topic: "Computers",
         title: "Unbranded Wooden Soap",
         excerpt: "Illum et soluta laborum sed exercitationem laboriosam tempore. Veniam velit ut et ex odit sit aliquam eos consectetur. Itaque quo provident iste voluptatem.",

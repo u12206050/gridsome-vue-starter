@@ -17,6 +17,9 @@ button:focus, a:focus, input:focus {
   overflow: hidden;
   position: relative;
   line-height: 1.5em;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: break-spaces;
   max-height: 6em;
 }
 .lines-2 {
