@@ -13,7 +13,7 @@
     </span>
     <span class="flex flex-col text-base py-4">
       <h3 class="text-lg font-semibold capitalize text-black">{{title}}</h3>
-      <g-image class="pointer-events-none w-full rounded object-cover my-4" :src="image" width="84" height="112"></g-image>
+      <g-image class="pointer-events-none w-full rounded object-cover my-4 h-40" :src="image" width="84" height="112"></g-image>
       <p class="block-with-text lines-2">{{excerpt}}</p>
     </span>
     <span class="flex justify-between items-center mt-4">

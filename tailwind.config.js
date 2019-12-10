@@ -24,7 +24,8 @@ module.exports = {
     }
   },
   variants: {
-    fill: ['hover', 'focus']
+    fill: ['hover', 'focus'],
+    borderWidth: ['responsive', 'focus']
   },
   corePlugins: {
     outline: false

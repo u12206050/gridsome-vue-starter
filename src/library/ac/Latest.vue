@@ -12,13 +12,13 @@
     <div class="my-2 relative" v-touch:swipe.left="showNextCard">
       <transition-group name="card-stack" tag="div">
         <Card
-          :key="backCard.path"
-          :title="backCard.title"
-          :subtitle="backCard.subtitle"
-          :excerpt="backCard.excerpt"
-          :path="backCard.path"
-          :image="backCard.image"
-          class="back"
+          :key="prevCard.path"
+          :title="prevCard.title"
+          :subtitle="prevCard.subtitle"
+          :excerpt="prevCard.excerpt"
+          :path="prevCard.path"
+          :image="prevCard.image"
+          class="prev"
         ></Card>
         <Card
           :key="nextCard.path"
@@ -53,7 +53,7 @@ export default {
   name: 'LatestCards',
   data() {
     return {
-      currentIndex: 0,
+      tab: 0,
       cards: [{
         title: "Director",
         subtitle: "THX",
@@ -83,21 +83,21 @@ export default {
   },
   methods: {
     showNextCard() {
-      this.currentIndex = (this.currentIndex + 1) % this.cards.length
+      this.tab = (this.tab + 1) % this.cards.length
     }
   },
   computed: {
     currentCard() {
-      const { currentIndex, cards } = this
-      return cards[currentIndex]
+      const { tab, cards } = this
+      return cards[tab]
     },
     nextCard() {
-      const { currentIndex, cards } = this
-      return cards[(currentIndex + 1) % cards.length]
+      const { tab, cards } = this
+      return cards[(tab + 1) % cards.length]
     },
-    backCard() {
-      const { currentIndex, cards } = this
-      return cards[(currentIndex + 2) % cards.length]
+    prevCard() {
+      const { tab, cards } = this
+      return cards[(tab + 2) % cards.length]
     },
   },
   components: {
@@ -140,7 +140,7 @@ export default {
   transform-origin: center left;
   @apply bg-gray-100;
 }
-.back {
+.prev {
   transform: scale(0.8) translateX(24%);
   transform-origin: center left;
   @apply bg-gray-300;
