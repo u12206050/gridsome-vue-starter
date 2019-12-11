@@ -95,10 +95,8 @@ export default {
   props: {
     cards: {
       type: Array,
-      required: true,
-      default: () => {[{
+      default: () => [{
         title: "Director",
-        subtitle: "THX",
         excerpt: "Et neque suscipit eveniet nostrum et assumenda ipsa qui repellendus. Non tempore fugiat enim qui ut. Molestiae ut est blanditiis omnis sed voluptatibus omnis minus voluptatem. Autem maxime porro omnis et.",
         path: "Cambridgeshire",
         image: "https://source.unsplash.com/random?641/481",
@@ -107,7 +105,6 @@ export default {
         author: "GZA"
       }, {
         title: "hard drive",
-        subtitle: "calculate",
         excerpt: "Qui delectus adipisci quas alias vel fugit. Temporibus ducimus cupiditate rem cupiditate iste consequatur facilis voluptatem et. Veritatis nihil necessitatibus vel. Sint nisi excepturi tenetur cupiditate ipsum rerum et. Nesciunt repellendus qui voluptate corporis ut assumenda nostrum commodi. Earum commodi consequatur.",
         path: "hard-drive",
         image: "https://source.unsplash.com/random?642/482",
@@ -116,7 +113,6 @@ export default {
         author: "GZA"
       }, {
         title: "experiences",
-        subtitle: "azure",
         excerpt: "Corporis minima ea ut ullam ea. Ab est omnis est et dolor aut sit provident doloribus. Non aut quae sint non ea error libero ut. Ea omnis omnis et. Deserunt reprehenderit velit suscipit odit ducimus aspernatur aliquam.",
         path: "Incredible",
         image: "https://source.unsplash.com/random?643/483",
@@ -125,14 +121,13 @@ export default {
         author: "GZA"
       }, {
         title: "Need Based",
-        subtitle: "Baby",
         excerpt: "Adipisci sit architecto et odit. Magni eligendi autem. Facilis nisi aperiam quia exercitationem error expedita aut quisquam. Beatae atque eum tempora ut. Dolorum necessitatibus sed unde. Exercitationem saepe commodi ut et corrupti tempore.",
         path: "baby",
         image: "https://source.unsplash.com/random?644/484",
         topic: "DAy4 pink Soft",
         readtime: 43,
         author: "GZA"
-      }]}
+      }]
     }
   },
   data() {

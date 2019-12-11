@@ -15,7 +15,6 @@ export default {
   props: {
     topics: {
       type: Array,
-      required: true,
       default: () => [
         {
           title: "cross-platform",

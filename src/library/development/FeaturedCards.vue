@@ -28,7 +28,6 @@ export default {
   props: {
     cards: {
       type: Array,
-      required: true,
       default: () => [{
         topic: "Computers",
         title: "Unbranded Wooden Soap",

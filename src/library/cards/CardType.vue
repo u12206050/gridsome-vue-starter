@@ -1,9 +1,9 @@
 <template>
-  <div class="h-48 w-32 rounded-xl text-center" :class="demoColor">
-    <g-image class="pointer-events-none w-full rounded-t-xl object-cover h-32 p-4" :src="demoImage" width="84" height="80"></g-image>
-    <div class="p-2">  
-      <h1 class="text-white text-sm font-medium">{{ title }}</h1>
-      <p class="text-white text-xs opacity-75">{{ count }} resources</p>
+  <div class="card-type" :class="demoColor">
+    <g-image class="pointer-events-none w-full rounded-t-xl object-contain h-32 px-4" :src="demoImage" width="84" height="80"></g-image>
+    <div class="px-2">  
+      <h1 class="text-white text-sm font-medium truncate">{{ title }}</h1>
+      <p class="text-white text-xs opacity-75">{{ count }} <span>resources</span></p>
     </div>
   </div>
 </template>
@@ -20,16 +20,14 @@ export default {
       required: true
     },
     // Image
-    // image: {
-    //   type: [String, Object],
-    //   required: true
-    // },
-    //
-    // color: {
-    //   type: String,
-    //   required: true,
-    //   default: "bg-d4green"
-    // }
+    image: {
+      type: [String, Object],
+      required: true
+    },
+    color: {
+      type: String,
+      required: true,
+    }
   },
   data() {
     return {
@@ -52,3 +50,32 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.card-type {
+  @apply h-48 w-32 text-center rounded-xl;
+  transition: .4s ease;
+
+  &.small {
+    @apply h-8 w-auto text-left rounded-lg;
+
+    img {
+      display: none;
+    }
+
+    >div {
+      @apply flex items-center h-full;
+      h1 {        
+        @apply flex-1 text-left;
+      }
+      p {
+        @apply pl-2;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+</style>

@@ -24,10 +24,6 @@ export default {
       },
       // faker.lorem.paragraph
       excerpt: String,
-      path: {
-        type: String,
-        required: true
-      },
       // Image
       image: [Object, String],
       readTime: Number,
