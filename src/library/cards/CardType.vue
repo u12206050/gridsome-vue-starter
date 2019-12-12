@@ -1,5 +1,5 @@
 <template>
-  <div class="card-type" :class="demoColor">
+  <div class="card-type" :class="[demoColor, small && 'small']">
     <g-image class="pointer-events-none w-full rounded-t-xl object-contain h-32 px-4" :src="demoImage" width="84" height="80"></g-image>
     <div class="px-2">  
       <h1 class="text-white text-sm font-medium truncate">{{ title }}</h1>
@@ -27,6 +27,9 @@ export default {
     color: {
       type: String,
       required: true,
+    },
+    small: {
+      type: Boolean,
     }
   },
   data() {

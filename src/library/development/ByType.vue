@@ -3,11 +3,12 @@
     <h1 class="ml-1 mb-2">By Type</h1>
     <div class="snap py-4 overflow-x-scroll flex content-between">
       <div v-for="type in types" :key="type.count">
-        <CardType class="mr-4 snap-item" :class="{small: smallCard}"
+        <CardType class="mr-4 snap-item"
           :title="type.title" 
           :count="type.count"
           :color="type.color"
           :image="type.image"
+          :small="smallCard"
         ></CardType>
       </div>
     </div>
