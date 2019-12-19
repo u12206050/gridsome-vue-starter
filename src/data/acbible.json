@@ -1,0 +1,478 @@
+{
+  "old": [
+    {
+      "no": 1,
+      "name": "Genesis",
+      "total": 50,
+      "chapters": [
+        3,50,6,39,2,1,4,18,15,5,13,19,22,17,21,45
+      ]
+    },
+    {
+      "no": 2,
+      "name": "Exodus",
+      "total": 40,
+      "chapters": [
+        20,34,14,32,3,33,19
+      ]
+    },
+    {
+      "no": 3,
+      "name": "Leviticus",
+      "total": 27,
+      "chapters": [
+        16,18,17,24,10,19
+      ]
+    },
+    {
+      "no": 4,
+      "name": "Numbers",
+      "total": 36,
+      "chapters": [
+        14,23,12,13,24,16
+      ]
+    },
+    {
+      "no": 5,
+      "name": "Deuteronomy",
+      "total": 34,
+      "chapters": [
+        8,30,28,6,20,31,7,32,10,4,27,5
+      ]
+    },
+    {
+      "no": 6,
+      "name": "Joshua",
+      "total": 24,
+      "chapters": [
+        10,6,1,3,11,7
+      ]
+    },
+    {
+      "no": 7,
+      "name": "Judges",
+      "total": 21,
+      "chapters": [
+        4,7,2
+      ]
+    },
+    {
+      "no": 8,
+      "name": "Ruth",
+      "total": 4,
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "no": 9,
+      "name": "1 Samuel",
+      "total": 31,
+      "chapters": [
+        7,1,15,18,3,2,16
+      ]
+    },
+    {
+      "no": 10,
+      "name": "2 Samuel",
+      "total": 24,
+      "chapters": [
+        22,11,12,6,16
+      ]
+    },
+    {
+      "no": 11,
+      "name": "1 Kings",
+      "total": 22,
+      "chapters": [
+        11,19,8,18,6,3
+      ]
+    },
+    {
+      "no": 12,
+      "name": "2 Kings",
+      "total": 25,
+      "chapters": [
+        20,6,10
+      ]
+    },
+    {
+      "no": 13,
+      "name": "1 Chronicles",
+      "total": 29,
+      "chapters": [
+        4,28,29
+      ]
+    },
+    {
+      "no": 14,
+      "name": "2 Chronicles",
+      "total": 36,
+      "chapters": [
+        16,18
+      ]
+    },
+    {
+      "no": 17,
+      "name": "Esther",
+      "total": 10,
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "no": 19,
+      "name": "Psalms",
+      "total": 150,
+      "chapters": [
+        103,119,139,137
+      ]
+    },
+    {
+      "no": 20,
+      "name": "Proverbs",
+      "total": 31,
+      "chapters": [
+        28,11,25,16,6,4,8,29,3,31,18,23,21,24,12,14,26,1,10,20,17,27,15,22,19
+      ]
+    },
+    {
+      "no": 21,
+      "name": "Ecclesiastes",
+      "total": 12,
+      "chapters": [
+        7,9,3,1,12
+      ]
+    },
+    {
+      "no": 23,
+      "name": "Isaiah",
+      "total": 66,
+      "chapters": [
+        42,58,40,53,35,25,61,59,43,55,45,48,1,56,41,49,60,6,65,32,62,2,9,5,30,63,26,50,14,7,57,66,11,12,8,33
+      ]
+    },
+    {
+      "no": 24,
+      "name": "Jeremiah",
+      "total": 52,
+      "chapters": [
+        29,31,1,23,17,15,48,33,32,2
+      ]
+    },
+    {
+      "no": 25,
+      "name": "Lamentations",
+      "total": 5,
+      "chapters": [
+        3,4
+      ]
+    },
+    {
+      "no": 26,
+      "name": "Ezekiel",
+      "total": 48,
+      "chapters": [
+        22,14,8,38,28,36,1
+      ]
+    },
+    {
+      "no": 27,
+      "name": "Daniel",
+      "total": 12,
+      "chapters": [
+        10,9,6,7,3
+      ]
+    },
+    {
+      "no": 28,
+      "name": "Hosea",
+      "total": 14,
+      "chapters": [
+        6
+      ]
+    },
+    {
+      "no": 29,
+      "name": "Joel",
+      "total": 3,
+      "chapters": [
+        2,3
+      ]
+    },
+    {
+      "no": 30,
+      "name": "Amos",
+      "total": 9,
+      "chapters": [
+        9,3,8
+      ]
+    },
+    {
+      "no": 32,
+      "name": "Jonah",
+      "total": 4,
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "no": 33,
+      "name": "Micah",
+      "total": 7,
+      "chapters": [
+        7,6,4,5
+      ]
+    },
+    {
+      "no": 36,
+      "name": "Zephaniah",
+      "total": 3,
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "no": 37,
+      "name": "Haggai",
+      "total": 2,
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "no": 38,
+      "name": "Zechariah",
+      "total": 14,
+      "chapters": [
+        13,14,12,4,7,2,1
+      ]
+    },
+    {
+      "no": 39,
+      "name": "Malachi",
+      "total": 4,
+      "chapters": [
+        4,3
+      ]
+    }
+  ],
+  "new": [
+    {
+      "no": 40,
+      "name": "Matthew",
+      "total": 28,
+      "chapters": [
+        20,6,16,19,5,7,28,11,13,10,18,8,4,26,25,12,23,9,24,3,27,21,22,15,1,2,14
+      ]
+    },
+    {
+      "no": 41,
+      "name": "Mark",
+      "total": 16,
+      "chapters": [
+        9,7,10,3,5,2,13,16,15,4,1,8,11,6,12,14
+      ]
+    },
+    {
+      "no": 42,
+      "name": "Luke",
+      "total": 24,
+      "chapters": [
+        22,9,12,14,6,23,15,17,8,2,18,11,16,1,24,21,13,4,3,7,19,10,25,5
+      ]
+    },
+    {
+      "no": 43,
+      "name": "John",
+      "total": 21,
+      "chapters": [
+        15,8,16,14,1,20,10,3,4,12,28,11,5,17,21,6,18,13,7,9,19,2
+      ]
+    },
+    {
+      "no": 44,
+      "name": "Acts",
+      "total": 28,
+      "chapters": [
+        3,5,2,1,4,11,26,24,17,9,15,19,6,13,20,10,7,8,22,18,16,14
+      ]
+    },
+    {
+      "no": 45,
+      "name": "James",
+      "total": 5,
+      "chapters": [
+        4,1,2,5,3
+      ]
+    },
+    {
+      "no": 46,
+      "name": "1 Peter",
+      "total": 5,
+      "chapters": [
+        4,5,3,2,1
+      ]
+    },
+    {
+      "no": 47,
+      "name": "2 Peter",
+      "total": 3,
+      "chapters": [
+        1,2,3,4
+      ]
+    },
+    {
+      "no": 48,
+      "name": "1 John",
+      "total": 5,
+      "chapters": [
+        2,1,4,3,5
+      ]
+    },
+    {
+      "no": 49,
+      "name": "2 John",
+      "total": 1,
+      "chapters": [
+        1,7
+      ]
+    },
+    {
+      "no": 50,
+      "name": "3 John",
+      "total": 1,
+      "chapters": [
+        1,3
+      ]
+    },
+    {
+      "no": 51,
+      "name": "Jude",
+      "total": 1,
+      "chapters": [
+        4,1,20,3,16
+      ]
+    },
+    {
+      "no": 52,
+      "name": "Romans",
+      "total": 16,
+      "chapters": [
+        8,6,5,1,12,2,11,10,3,7,15,14,16,4,13
+      ]
+    },
+    {
+      "no": 53,
+      "name": "1 Corinthians",
+      "total": 16,
+      "chapters": [
+        11,13,8,6,10,15,12,2,4,9,3,1,14,7,5,16
+      ]
+    },
+    {
+      "no": 54,
+      "name": "2 Corinthians",
+      "total": 13,
+      "chapters": [
+        4,5,10,2,7,6,9,1,3,11,12,13,8
+      ]
+    },
+    {
+      "no": 55,
+      "name": "Galatians",
+      "total": 6,
+      "chapters": [
+        5,2,1,6,3,4
+      ]
+    },
+    {
+      "no": 56,
+      "name": "Ephesians",
+      "total": 6,
+      "chapters": [
+        4,2,3,5,6,1
+      ]
+    },
+    {
+      "no": 57,
+      "name": "Philippians",
+      "total": 4,
+      "chapters": [
+        4,2,1,3
+      ]
+    },
+    {
+      "no": 58,
+      "name": "Colossians",
+      "total": 4,
+      "chapters": [
+        3,1,2,4
+      ]
+    },
+    {
+      "no": 59,
+      "name": "1 Thessalonians",
+      "total": 5,
+      "chapters": [
+        5,4,2,1
+      ]
+    },
+    {
+      "no": 60,
+      "name": "2 Thessalonians",
+      "total": 3,
+      "chapters": [
+        2,1,3
+      ]
+    },
+    {
+      "no": 61,
+      "name": "1 Timothy",
+      "total": 6,
+      "chapters": [
+        4,6,2,3,1,5
+      ]
+    },
+    {
+      "no": 62,
+      "name": "2 Timothy",
+      "total": 4,
+      "chapters": [
+        1,2,3,4
+      ]
+    },
+    {
+      "no": 63,
+      "name": "Titus",
+      "total": 3,
+      "chapters": [
+        2,1,3
+      ]
+    },
+    {
+      "no": 64,
+      "name": "Philemon",
+      "total": 1,
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "no": 65,
+      "name": "Hebrews",
+      "total": 13,
+      "chapters": [
+        4,2,10,1,8,9,13,5,7,11,12,6,3
+      ]
+    },
+    {
+      "no": 66,
+      "name": "Revelation",
+      "total": 22,
+      "chapters": [
+        4,21,7,20,3,1,19,14,17,13,2,22,15,12,16,8,6,5,11,9,18
+      ]
+    }
+  ]
+}

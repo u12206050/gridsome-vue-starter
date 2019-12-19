@@ -8,6 +8,8 @@ html, body {
   width: 100%;
   -webkit-font-smoothing: antialiased!important;
   -moz-osx-font-smoothing: grayscale!important;
+  font-family: 'Source Sans Pro', sans-serif;
+  scroll-behavior: smooth;
 }
 
 button:focus, a:focus, input:focus {

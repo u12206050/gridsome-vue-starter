@@ -21,4 +21,11 @@ export default function (Vue, { router, head, isClient }) {
     'data-key': 'viewport',
     content: 'width=device-width, viewport-fit=auto'
   })
+
+  head.link.push({
+    rel: 'prefetch',
+    key: 'GoogleFonts',
+    href: 'https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,600,700&display=swap',
+    onload: "this.onload=null;this.rel='stylesheet'"
+  })
 }

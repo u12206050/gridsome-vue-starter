@@ -14,6 +14,11 @@ module.exports = {
       'mlg': {'max': '1023px'},// => @media (max-width: 1023px) { ... }
       'mxl': {'max': '1279px'}// => @media (max-width: 1279px) { ... }
     },
+    fontFamily: {
+      sans: ['Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      serif: ['Merriweather', '-apple-system', 'BlinkMacSystemFont', 'serif'],
+      mono: ['Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+    },
     extend: {
       borderRadius: {
         'xl': '1rem',
@@ -26,6 +31,11 @@ module.exports = {
         'desktop': '1280px',
 
         '36': '9rem'
+      },
+      height: {
+        'mobile': '674px',
+        'tablet': '1024px',
+        'laptop': '768px',
       },
       colors: {
         'd4primary': 'var(--primary)',
@@ -40,7 +50,8 @@ module.exports = {
         'd4white': 'var(--white)',
         'd4black': 'var(--black)',
         'd4red': 'var(--red)',
-        'd4green': 'var(--green)'
+        'd4green': 'var(--green)',
+        'd4athens': 'var(--athens)'
       }
     }
   },
