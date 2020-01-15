@@ -3,8 +3,8 @@
     <div class="flex justify-between pb-4">
       <h1 class="text-d4slate-dark text-lg font-bold">New for you</h1>
       <div>
-        <Link title="Customise" /> 
-          <span class="text-d4slate-light mx-1">|</span> 
+        <Link title="Customise" />
+          <span class="text-d4slate-light mx-1">|</span>
         <Link title="See All" />
       </div>
     </div>
@@ -46,7 +46,7 @@
     </span>
     <div class="cards my-2 flex overflow-hidden">
       <transition-group name="card-slide" tag="div">
-        <div 
+        <div
           :key="prevCard.path"
           class="card prev w-full">
           <WidgetCard
@@ -58,7 +58,7 @@
             :author="prevCard.author"
           />
         </div>
-        <div 
+        <div
           :key="nextCard.path"
           class="card next w-full">
           <WidgetCard
@@ -70,7 +70,7 @@
             :author="nextCard.author"
           />
         </div>
-        <div 
+        <div
           :key="currentCard.path"
           class="card current w-full">
           <WidgetCard
@@ -84,7 +84,7 @@
         </div>
       </transition-group>
     </div>
-    <button @click="showPrevCard">Prev Card</button> - 
+    <button @click="showPrevCard">Prev Card</button> -
     <button @click="showNextCard">Next Card</button>
   </div>
 </template>
@@ -92,10 +92,11 @@
 <script>
 export default {
   name: 'Story',
-  props: {
-    cards: {
-      type: Array,
-      default: () => [{
+  data() {
+    return {
+      loop: false,
+      tab: 0,
+      cards: [{
         title: "Director",
         excerpt: "Et neque suscipit eveniet nostrum et assumenda ipsa qui repellendus. Non tempore fugiat enim qui ut. Molestiae ut est blanditiis omnis sed voluptatibus omnis minus voluptatem. Autem maxime porro omnis et.",
         path: "Cambridgeshire",
@@ -128,12 +129,6 @@ export default {
         readtime: 43,
         author: "GZA"
       }]
-    }
-  },
-  data() {
-    return {
-      loop: false,
-      tab: 0,
     }
   },
   methods: {
@@ -183,7 +178,7 @@ export default {
       .link.active:nth-child(#{$i}) ~ .marker {
         left: #{($i - 1) * 64}px;
       }
-    }  
+    }
   }
 
   .cards {
