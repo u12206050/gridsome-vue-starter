@@ -10,6 +10,7 @@
 export default {
   name: 'CardSimple',
   props: {
+    // faker.lorem.title
     title: {
       type: String,
       required: true
