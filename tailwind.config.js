@@ -7,12 +7,12 @@ module.exports = {
       'sm': '640px',// => @media (min-width: 640px) { ... }
       'md': '768px',// => @media (min-width: 768px) { ... }
       'lg': '1024px',// => @media (min-width: 1024px) { ... }
-      'xl': '1280px',// => @media (min-width: 1280px) { ... }
+      'xl': '1366px',// => @media (min-width: 1366px) { ... }
 
       'msm': {'max': '639px'},// => @media (max-width: 639px) { ... }
       'mmd': {'max': '767px'},// => @media (max-width: 767px) { ... }
       'mlg': {'max': '1023px'},// => @media (max-width: 1023px) { ... }
-      'mxl': {'max': '1279px'}// => @media (max-width: 1279px) { ... }
+      'mxl': {'max': '1365px'}// => @media (max-width: 1279px) { ... }
     },
     fontFamily: {
       sans: ['Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
@@ -25,11 +25,11 @@ module.exports = {
         '25': '25%'
       },
       width: {
-        'mobile': '380px',
+        'mobile': '480px',
         'tablet': '768px',
         'laptop': '1024px',
-        'desktop': '1280px',
-
+        'desktop': '1366px',
+        'content': 'max-content',
         '36': '9rem'
       },
       height: {
@@ -49,6 +49,8 @@ module.exports = {
         'd4gray-dark': 'var(--gray-dark)',
         'd4white': 'var(--white)',
         'd4black': 'var(--black)',
+        'd4black-50': 'var(--black-50)',
+        'd4white-50': 'var(--white-50)',
         'd4red': 'var(--red)',
         'd4green': 'var(--green)',
         'd4athens': 'var(--athens)'

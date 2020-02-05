@@ -138,6 +138,9 @@ export default {
   --white: #ffffff;
   --black: #212236;
 
+  --white-50: rgba(255, 255, 255, 0.50);
+  --black-50: rgba(33, 34, 54, 0.50);
+
   --red: #D14A4A;
 
   --green: #618D3A;
