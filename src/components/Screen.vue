@@ -29,9 +29,10 @@
           <span class="w-4 h-4 rounded-full bg-yellow-500 m-2"></span>
           <span class="w-4 h-4 rounded-full bg-green-500 m-2"></span>
         </div>
-        <div class="bg-white block relative" :class="previewInner" style="min-height: 24rem">
-          <component :is="component" v-bind="props"></component>
-        </div>
+        <component ref="html" :is="component" v-bind="props"></component>
+        <!--div class="bg-white block relative" :class="previewInner" style="min-height: 24rem">
+          <iframe class="block w-full h-full" :src="html"></iframe>
+        </div-->
       </div>
       <Code v-else :code="source" class="w-full" />
     </div>
@@ -52,8 +53,34 @@ export default {
     return {
       previewSize: 'w-tablet',
       previewInner: 'h-full',
-      repeat: [1,2,3,4]
+      repeat: [1,2,3,4],
+      html: 'javascript:void(0);'
     }
+  },
+  methods: {
+    updatehtml() {
+      let xml = 'javascript:void(0);'
+      if (this.$refs.html) {
+        xml = '<style type="text/css">'
+        let styles = document.querySelectorAll('style')
+        for(let i=0; i<styles.length; ++i) {
+          xml += `
+${styles[i].innerHTML}
+`;
+        }
+        xml += '</style>'
+        xml += `
+${this.$refs.html.$el.innerHTML}
+`
+        xml = "data:text/html;charset=utf-8," + escape(xml)
+      }
+      this.html = xml
+    }
+  },
+  mounted() {
+    /*setInterval(() => {
+      this.updatehtml()
+    }, 1000)*/
   },
   components: {
     Code: () => import("~/components/Code.vue")
