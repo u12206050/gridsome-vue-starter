@@ -1,10 +1,10 @@
 <template>
-  <div class="max-w-sm rounded-xl pb-4">
-    <div v-if="loginScreen" class="bg-d4primary text-center rounded-xl relative">
+  <div class="max-w-sm rounded-xl pb-4 border border-gray-300">
+    <div class="bg-d4primary text-center rounded-xl relative">
       <div class="pt-6 px-12 mx-auto pb-10">
         <h1 class="text-white text-4xl italic">LOGO</h1>
         <p class="text-3xl text-white font-semibold">Register to continue</p>
-        <p class="text-white text-xl">Follow topics, bookmark, download wallpapers & books, and much more</p>
+        <p class="text-white text-xl leading-snug">Follow topics, bookmark, download wallpapers & books, and much more</p>
       </div>
       <g-image class="absolute left-0 bottom-2" src="~/assets/library/humaaan1.png" />
       <g-image class="absolute right-0 bottom-2" src="~/assets/library/humaaan2.png" />
@@ -15,7 +15,7 @@
         </svg>
       </g-link>
     </div>
-    <div class="rounded-xl p-4">
+    <div v-if="loginScreen" class="rounded-xl p-4">
       <p class="uppercase text-center mb-6 text-d4slate-dark mt-4 font-semibold">Sign up with</p>
       <g-link class="bg-facebook flex p-4 rounded-xl justify-between">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="current" xmlns="http://www.w3.org/2000/svg">
@@ -33,6 +33,67 @@
         <p class="text-white">Sign up with e-mail</p>
       </a>
     </div>
+    <div v-else class="rounded-xl p-4">
+      <p class="uppercase text-center mb-6 text-d4slate-dark mt-4 font-semibold">Sign up</p>
+      <form action="">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email
+          </label>
+          <input v-model="user.email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="john.doe@mail.com">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            Password
+          </label>
+          <input v-model="user.password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********">
+          <p class="hidden text-red-500 italic">Please choose a password.</p>
+        </div>
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-d4slate-light">Create new account</p>
+          <input type="checkbox" class="slide-toggle" name="checkbox" id="signUp" v-model="signUp">
+          <label for="signUp" class="switch"></label>
+        </div>
+        <div v-if="signUp">
+          <div class="flex">
+            <div class="mb-4 mr-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="firstname">
+                First name
+              </label>
+              <input v-model="user.firstname" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="firstname" type="firstname" placeholder="John">
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="lastname">
+                Last name
+              </label>
+              <input v-model="user.lastname" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastname" type="lastname" placeholder="Doe">
+            </div>
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+              Repeat password
+            </label>
+            <input v-model="user.repeatPassword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password-repeat" type="password" placeholder="**********">
+            <p class="hidden text-red-500 italic">Please choose a password.</p>
+          </div>
+          <div class="flex items-center justify-between mb-4 border-t border-gray-300 pt-4">
+            <p class="text-d4slate-light">I hereby agree to the <a>terms and conditions</a> and <a>privacy policy</a></p>
+            <input type="checkbox" class="slide-toggle" name="checkbox" id="agree" v-model="agree">
+            <label for="agree" class="switch"></label>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            {{signUp ? 'Sign Up' : 'Sign In'}}
+          </button>
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+            Forgot Password?
+          </a>
+        </div>
+      </form>
+      <a href="#" @click="loginScreen = !loginScreen" class="text-center text-sm pointer text-gray-600 mt-4 block">Go back</a>
+    </div>
   </div>
 </template>
 
@@ -40,8 +101,49 @@
 export default {
   data() {
     return {
-      loginScreen: true
+      loginScreen: true,
+      signUp: false,
+      agree: false,
+      user: {
+        email: '',
+        password: '',
+        firstname: '',
+        lastname: '',
+        repeatPassword: ''
+      }
     }
-  }
+  },
 }
 </script>
+
+<style lang="scss">
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    @apply bg-gray-400 flex-shrink-0;
+    border-radius: 30px;
+  }
+  .switch::after {
+    content: '';
+    position: absolute;
+    height: 26px;
+    width: 28px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: all .3s;
+  }
+  .slide-toggle:checked + .switch::after {
+    left: 30px;
+  }
+  .slide-toggle:checked + .switch {
+    // background-color: #7983ff;
+    @apply bg-d4secondary flex-shrink-0;
+  }
+  .slide-toggle {
+    display: none;
+  }
+</style>
