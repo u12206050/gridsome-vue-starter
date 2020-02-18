@@ -38,7 +38,7 @@ export default {
     author: String,
     timeToRead: {
       type: Number,
-      default: 32
+      default: '32'
     }
   }
 }
