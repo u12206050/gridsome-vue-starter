@@ -33,18 +33,18 @@
         <div v-for="(branch, dir) in tree" :key="dir" class="p-3 msm:text-center">
           <h5 class="mb-3 lg:mb-2 text-gray-600 uppercase tracking-wide font-bold text-sm lg:text-xs">{{dir}}</h5>
           <template v-for="comp in branch.comps">
-            <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+            <button @click="selected = comp" :key="comp.id" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</button>
           </template>
           <div class="p-1" v-for="(leaf, ldir) in branch.leafs" :key="ldir" >
             <h5 class="my-2 text-gray-500 uppercase tracking-wide font-bold text-xs lg:text-xs">{{ldir}}</h5>
             <template v-for="comp in leaf.comps">
-              <g-link :key="comp.id" :to="comp.path" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</g-link>
+              <button @click="selected = comp" :key="comp.id" class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{comp.name | namify}}</button>
             </template>
           </div>
         </div>
       </aside>
       <main class="flex-auto overflow-x-hidden">
-        <slot/>
+        <slot v-bind:prop="selected"/>
       </main>
     </div>
   </div>
@@ -79,7 +79,8 @@ export default {
         'theme-ac': 'AC',
         'theme-tf': 'TF'
       },
-      theme: "theme-ac"
+      theme: "theme-ac",
+      selected: null,
     }
   },
   computed: {
@@ -134,7 +135,7 @@ export default {
   --gray-light: #f4f4f4;
   --gray: #d4d4d4;
   --gray-dark: #757575;
-  
+
   --white: #ffffff;
   --black: #212236;
 
