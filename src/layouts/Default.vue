@@ -147,6 +147,8 @@ export default {
   --green: #618D3A;
 
   --athens: #f5f6f8;
+
+  --facebook: #475993;
 }
 .theme-tf {
   --primary: blue;

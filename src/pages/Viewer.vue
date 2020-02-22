@@ -8,14 +8,12 @@
 let V;
 let connected = false;
 function connect(el) {
-  if (!connected) {
-    console.log('pinging')
+  if (!connected && el.contentWindow) {
     el.contentWindow.postMessage('ping', window.location.origin);
     setTimeout(connect, 100, el)
   }
 }
 function handleMessage(e) {
-  console.log('handleMessage')
   if (V && e.origin === window.location.origin && e.data) {
     connected = true
     V.$set(V, 'classList', e.data)

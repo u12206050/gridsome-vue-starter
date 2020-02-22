@@ -29,9 +29,7 @@
           <span class="w-4 h-4 rounded-full bg-yellow-500 m-2"></span>
           <span class="w-4 h-4 rounded-full bg-green-500 m-2"></span>
         </div>
-        <div class="bg-white block relative" :class="previewInner" style="min-height: 24rem">
-          <component :is="component" v-bind="props"></component>
-        </div>
+        <component ref="html" :is="component" v-bind="props"></component>
       </div>
       <Code v-else :code="source" class="w-full" />
     </div>
@@ -59,7 +57,6 @@ export default {
     return {
       previewSize: 'w-tablet',
       previewInner: 'h-full',
-      repeat: [1,2,3,4],
       parentWin: null,
     }
   },
